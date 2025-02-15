@@ -16,8 +16,8 @@ const DATA = [
     title: 'gorhom/bottom-sheet',
   },
   {
-    page: 'test2',
-    title: 'Next Item',
+    page: 'snackbarDemo',
+    title: 'TODO - Snackbar',
   },
   {
     page: 'test3',
