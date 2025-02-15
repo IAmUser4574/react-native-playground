@@ -1,7 +1,7 @@
 import { FlashList } from "@shopify/flash-list";
 import React from 'react';
-import {View, StyleSheet, Text, StatusBar, TouchableOpacity} from 'react-native';
-import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
+import { View, StyleSheet, Text, StatusBar, TouchableOpacity } from 'react-native';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { useRouter } from "expo-router"; // Using Expo Router navigation
 
 
