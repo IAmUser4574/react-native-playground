@@ -65,6 +65,10 @@ export default function ToastMessage() {
                 <Text style={styles.buttonText}>Dismiss Toast</Text>
             </TouchableOpacity>
 
+            <Text style={ { textAlign: 'center', paddingTop: 15 } }>
+                Swipe up on toast to dismiss manually
+            </Text>
+
             <Toast
                 config={{
                 successCustom: (props) => (
@@ -83,7 +87,7 @@ export default function ToastMessage() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 0.25,
+        flex: 0.5,
         justifyContent: 'center',
         padding: 50,
         gap: 20,
