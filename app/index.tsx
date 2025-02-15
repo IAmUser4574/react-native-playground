@@ -3,12 +3,13 @@ import React from 'react';
 import { View, StyleSheet, Text, StatusBar, TouchableOpacity } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { useRouter } from "expo-router"; // Using Expo Router navigation
+import Toast from 'react-native-toast-message';
 
 
 const DATA = [
   {
-    page: 'test',
-    title: 'First Item',
+    page: 'toastMessage',
+    title: 'toast-message',
   },
   {
     page: 'test1',
@@ -58,12 +59,12 @@ const Item = ({ page, title }: ItemProps) => {
   const router = useRouter();
 
   return (
-  <TouchableOpacity onPress={() => router.push(`./pages/${page}`)}>
+    <TouchableOpacity onPress={() => router.push(`./pages/${page}`)}>
       <View style={styles.item}>
         <Text style={styles.title}>{title}</Text>
       </View>
     </TouchableOpacity>
-);
+  );
 };
 
 export default function Index() {
@@ -80,6 +81,8 @@ export default function Index() {
     </SafeAreaProvider>
   );
 }
+
+// {/* <Toast /> */}
 
 const styles = StyleSheet.create({
   container: {
