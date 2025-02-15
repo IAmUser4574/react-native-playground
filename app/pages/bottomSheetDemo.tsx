@@ -1,30 +1,46 @@
-import { useCallback, useRef } from "react";
-import { StyleSheet, Text } from "react-native";
+import { useCallback, useMemo, useRef } from "react";
+import { Button, StyleSheet, Text } from "react-native";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
 
 
 export default function BottomSheetDemo() {
-    const bottomSheetRef = useRef<BottomSheet>(null);
+    // hooks
+  const sheetRef = useRef<BottomSheet>(null);
 
-    const handleSheetChanges = useCallback((index: number) => {
-        console.log('handleSheetChanges', index);
-      }, []);
+  // variables
+  const snapPoints = useMemo(() => ["25%", "50%", "90%"], []);
 
-    return (
-      // https://gorhom.dev/react-native-bottom-sheet/usage
-        <GestureHandlerRootView style={styles.container}>
+  // callbacks
+  const handleSheetChange = useCallback((index: number) => {
+    console.log("handleSheetChange", index);
+  }, []);
+  const handleSnapPress = useCallback((index: number) => {
+    sheetRef.current?.snapToIndex(index);
+  }, []);
+  const handleClosePress = useCallback(() => {
+    sheetRef.current?.close();
+  }, []);
+
+  // render
+  return (
+    <GestureHandlerRootView style={styles.container}>
+      <Button title="Snap To 90%" onPress={() => handleSnapPress(2)} />
+      <Button title="Snap To 50%" onPress={() => handleSnapPress(1)} />
+      <Button title="Snap To 25%" onPress={() => handleSnapPress(0)} />
+      <Button title="Close" onPress={() => handleClosePress()} />
       <BottomSheet
-        ref={bottomSheetRef}
-        onChange={handleSheetChanges}
+        ref={sheetRef}
+        snapPoints={snapPoints}
+        enableDynamicSizing={false}
+        onChange={handleSheetChange}
       >
         <BottomSheetView style={styles.contentContainer}>
-          <Text>Awesome 🎉</Text>
+          <Text>Awesome 🔥</Text>
         </BottomSheetView>
       </BottomSheet>
     </GestureHandlerRootView>
-
-    );
+  );
 };
 
 
