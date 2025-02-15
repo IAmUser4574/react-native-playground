@@ -12,44 +12,44 @@ const DATA = [
     title: 'toast-message',
   },
   {
-    page: 'test1',
-    title: 'Second Item',
+    page: 'bottomSheetDemo',
+    title: 'gorhom/bottom-sheet',
   },
   {
     page: 'test2',
-    title: 'Third Item',
+    title: 'Next Item',
   },
   {
     page: 'test3',
-    title: 'Third Item',
+    title: 'Next Item',
   },
   {
     page: 'test4',
-    title: 'Third Item',
+    title: 'Next Item',
   },
   {
     page: 'test5',
-    title: 'Third Item',
+    title: 'Next Item',
   },
   {
     page: 'test6',
-    title: 'Third Item',
+    title: 'Next Item',
   },
   {
     page: 'test7',
-    title: 'Third Item',
+    title: 'Next Item',
   },
   {
     page: 'test8',
-    title: 'Third Item',
+    title: 'Next Item',
   },
   {
     page: 'test9',
-    title: 'Third Item',
+    title: 'Next Item',
   },
   {
     page: 'test10',
-    title: 'Third Item',
+    title: 'Next Item',
   },
 ];
 
