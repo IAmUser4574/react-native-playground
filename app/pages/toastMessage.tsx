@@ -1,6 +1,8 @@
 import { View, Text, Button, StyleSheet, TouchableOpacity, Linking } from "react-native";
 import Toast, { BaseToast, ErrorToast } from 'react-native-toast-message';
 
+// https://github.com/calintamas/react-native-toast-message/blob/main/docs/quick-start.md
+
 export default function ToastMessage() {
     function showDefaultSuccessToast(): void {
         Toast.show({

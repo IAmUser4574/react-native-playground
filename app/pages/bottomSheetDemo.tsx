@@ -3,6 +3,7 @@ import { Button, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
 
+// https://gorhom.dev/react-native-bottom-sheet/components/bottomsheetview
 
 export default function BottomSheetDemo() {
 
