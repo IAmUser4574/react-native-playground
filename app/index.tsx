@@ -1,50 +1,90 @@
 import { FlashList } from "@shopify/flash-list";
 import React from 'react';
-import {View, StyleSheet, Text, StatusBar} from 'react-native';
+import {View, StyleSheet, Text, StatusBar, TouchableOpacity} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
+import { useRouter } from "expo-router"; // Using Expo Router navigation
+
 
 const DATA = [
   {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    page: 'test',
     title: 'First Item',
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    page: 'test1',
     title: 'Second Item',
   },
   {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    page: 'test2',
+    title: 'Third Item',
+  },
+  {
+    page: 'test3',
+    title: 'Third Item',
+  },
+  {
+    page: 'test4',
+    title: 'Third Item',
+  },
+  {
+    page: 'test5',
+    title: 'Third Item',
+  },
+  {
+    page: 'test6',
+    title: 'Third Item',
+  },
+  {
+    page: 'test7',
+    title: 'Third Item',
+  },
+  {
+    page: 'test8',
+    title: 'Third Item',
+  },
+  {
+    page: 'test9',
+    title: 'Third Item',
+  },
+  {
+    page: 'test10',
     title: 'Third Item',
   },
 ];
 
-type ItemProps = {title: string};
+type ItemProps = {page: string, title: string};
 
-const Item = ({title}: ItemProps) => (
-  <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
-  </View>
-);
+const Item = ({ page, title }: ItemProps) => {
+  const router = useRouter();
 
-export default function Index(){
   return (
-  <SafeAreaProvider>
-    <SafeAreaView style={styles.container}>
-      <FlashList
-        data={DATA}
-        renderItem={({item}) => <Item title={item.title} />}
-        keyExtractor={item => item.id}
-        estimatedItemSize={99}
-      />
-    </SafeAreaView>
-  </SafeAreaProvider>
+  <TouchableOpacity onPress={() => router.push(`./pages/${page}`)}>
+      <View style={styles.item}>
+        <Text style={styles.title}>{title}</Text>
+      </View>
+    </TouchableOpacity>
+);
+};
+
+export default function Index() {
+  return (
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <FlashList
+          data={DATA}
+          renderItem={({ item }) => <Item page={item.page} title={item.title} />}
+          keyExtractor={(item) => item.page}
+          estimatedItemSize={99}
+        />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
+    marginTop: 10,
   },
   item: {
     backgroundColor: '#ddd',
