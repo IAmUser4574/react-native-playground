@@ -20,8 +20,8 @@ const DATA = [
     title: 'TODO - Snackbar',
   },
   {
-    page: 'test3',
-    title: 'Next Item',
+    page: 'notificationsDemo',
+    title: 'Notifications',
   },
   {
     page: 'test4',
