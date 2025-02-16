@@ -43,7 +43,7 @@ export default function NotificationsDemo () {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Notifications!</Text>
-            <StyledButton text="Local Push" onPress={sendNotification} />
+            <StyledButton text="Immediate Local Push" onPress={sendNotification} />
         </View>
     );
 }
