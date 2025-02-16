@@ -3,6 +3,8 @@ import * as Notifications from 'expo-notifications';
 import StyledButton from "../components/styledButton";
 import { useEffect } from "react";
 
+// https://docs.expo.dev/versions/latest/sdk/notifications/
+
 // Set how notifications are handled when received
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
