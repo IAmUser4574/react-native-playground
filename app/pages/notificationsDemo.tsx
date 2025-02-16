@@ -9,8 +9,8 @@ import { useEffect } from "react";
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
-    shouldPlaySound: false,
-    shouldSetBadge: false,
+    shouldPlaySound: true,
+    shouldSetBadge: true,
   }),
 });
 
@@ -33,7 +33,6 @@ export default function NotificationsDemo() {
       content: {
         title: 'Hello!',
         body: 'This is an immediate notification.',
-        data: { extraData: 'Some data' },
       },
       trigger: null, // Sends immediately
     });
@@ -46,10 +45,9 @@ export default function NotificationsDemo() {
       content: {
         title: 'Hello!',
         body: 'This is a timed notification.',
-        data: { extraData: 'Some data' },
       },
       trigger: {
-        seconds: 15,
+        seconds: 2,
         repeats: false,
         type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
       },
