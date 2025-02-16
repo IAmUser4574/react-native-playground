@@ -31,7 +31,7 @@ const DATA = [
     title: 'TODO - Snackbar',
   },
   {
-    page: 'carouselDemo',
+    page: 'animatedCarouselDemo',
     title: 'Carousel Swipe',
   },
   {
