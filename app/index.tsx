@@ -1,9 +1,8 @@
 import { FlashList } from "@shopify/flash-list";
 import React from 'react';
-import { View, StyleSheet, Text, StatusBar, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { useRouter } from "expo-router"; // Using Expo Router navigation
-import Toast from 'react-native-toast-message';
 
 
 const DATA = [
@@ -24,16 +23,16 @@ const DATA = [
     title: 'Notifications',
   },
   {
-    page: 'test4',
-    title: 'Next Item',
+    page: 'carouselDemo',
+    title: 'Carousel Swipe',
   },
   {
-    page: 'test5',
-    title: 'Next Item',
+    page: 'stripeDemo',
+    title: 'Stripe',
   },
   {
-    page: 'test6',
-    title: 'Next Item',
+    page: 'onboardingPaginationDemo',
+    title: 'Onboarding Pagination',
   },
   {
     page: 'test7',
