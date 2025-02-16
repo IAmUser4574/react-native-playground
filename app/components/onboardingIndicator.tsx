@@ -18,6 +18,8 @@ import Animated, {
 // lucide's CircleCheck will crash if the underlying react-native-svg dep isn't linked
 // `npx expo install react-native-svg`
 
+// TODO - proper exit transition after onFinished()
+
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
 // Constants
@@ -43,6 +45,7 @@ type OnboardingIndicatorProps = {
   data: number[];
   selectedIndex: number;
   onChange: (index: number) => void;
+  onFinished: () => void
 };
 type PaginationProps = {
   count: number;
@@ -59,6 +62,7 @@ export default function OnboardingIndicator({
   data,
   onChange,
   selectedIndex,
+  onFinished
 }: OnboardingIndicatorProps) {
   return (
     <View style={{ gap: _spacing }}>
@@ -68,6 +72,7 @@ export default function OnboardingIndicator({
         style={{ alignSelf: "center" }}
       />
       <View style={{ flexDirection: "row", gap: _spacing }}>
+        {/* Back button */}
         {selectedIndex > 0 && (
           <Button
             style={{ backgroundColor: "#ddd" }}
@@ -77,10 +82,13 @@ export default function OnboardingIndicator({
             <Text style={{ fontWeight: "600" }}>Back</Text>
           </Button>
         )}
+        {/* Continue/Finished Button */}
         <Button
           style={{ backgroundColor: "#036BFB", flex: 1 }}
           onPress={() => {
             if (selectedIndex === data.length - 1) {
+                // on Finished
+                onFinished();
               return;
             }
             onChange(selectedIndex + 1);
