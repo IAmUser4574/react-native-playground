@@ -15,12 +15,20 @@ const DATA = [
     title: 'gorhom/bottom-sheet',
   },
   {
-    page: 'snackbarDemo',
-    title: 'TODO - Snackbar',
-  },
-  {
     page: 'notificationsDemo',
     title: 'Notifications',
+  },
+  {
+    page: 'onboardingPaginationDemo',
+    title: 'Onboarding Pagination',
+  },
+  {
+    page: 'linearGradientDemo',
+    title: 'Linear Gradient',
+  },
+  {
+    page: 'snackbarDemo',
+    title: 'TODO - Snackbar',
   },
   {
     page: 'carouselDemo',
@@ -29,14 +37,6 @@ const DATA = [
   {
     page: 'stripeDemo',
     title: 'Stripe',
-  },
-  {
-    page: 'onboardingPaginationDemo',
-    title: 'Onboarding Pagination',
-  },
-  {
-    page: 'test7',
-    title: 'Next Item',
   },
   {
     page: 'test8',
@@ -80,8 +80,6 @@ export default function Index() {
     </SafeAreaProvider>
   );
 }
-
-// {/* <Toast /> */}
 
 const styles = StyleSheet.create({
   container: {

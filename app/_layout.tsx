@@ -5,6 +5,7 @@ export default function RootLayout() {
   return (
     <>
       <Stack />
+      {/* Must place Toast element in root layout */}
       <Toast />
     </>
   );
