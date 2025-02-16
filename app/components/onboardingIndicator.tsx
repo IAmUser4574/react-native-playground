@@ -15,6 +15,9 @@ import Animated, {
   ZoomIn,
 } from "react-native-reanimated";
 
+// lucide's CircleCheck will crash if the underlying react-native-svg dep isn't linked
+// `npx expo install react-native-svg`
+
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
 // Constants
