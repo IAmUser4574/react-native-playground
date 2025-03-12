@@ -8,35 +8,35 @@ import { useRouter, useNavigation } from "expo-router"; // Using Expo Router nav
 const DATA = [
   {
     page: 'toastMessage',
-    title: 'toast-message',
+    title: 'toast message',
   },
   {
     page: 'bottomSheetDemo',
-    title: 'gorhom/bottom-sheet',
+    title: 'gorhom bottom sheet',
   },
   {
     page: 'notificationsDemo',
-    title: 'Notifications',
+    title: 'push notifications',
   },
   {
     page: 'onboardingPaginationDemo',
-    title: 'Onboarding Pagination',
+    title: 'onboarding pagination',
   },
   {
     page: 'linearGradientDemo',
-    title: 'Linear Gradient',
-  },
-  {
-    page: 'snackbarDemo',
-    title: 'TODO - Snackbar',
+    title: 'linear gradient',
   },
   {
     page: 'animatedCarouselDemo',
-    title: 'Carousel Swipe',
+    title: 'carousel swipe',
+  },
+  {
+    page: 'snackbarDemo',
+    title: 'TODO - snackbar',
   },
   {
     page: 'stripeDemo',
-    title: 'Stripe',
+    title: 'TODO - stripe',
   },
   {
     page: 'test8',
