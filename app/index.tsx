@@ -1,8 +1,8 @@
 import { FlashList } from "@shopify/flash-list";
-import React from 'react';
+import { useEffect} from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
-import { useRouter } from "expo-router"; // Using Expo Router navigation
+import { useRouter, useNavigation } from "expo-router"; // Using Expo Router navigation
 
 
 const DATA = [
@@ -67,6 +67,18 @@ const Item = ({ page, title }: ItemProps) => {
 };
 
 export default function Index() {
+
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    navigation.setOptions({
+      title: "React Native Playground",
+      headerStyle: { },
+      headerTintColor: "#000000",
+      headerTitleStyle: { fontWeight: "bold", fontSize: 24 }
+    });
+  }, [navigation]);
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
@@ -84,14 +96,21 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 10,
+    backgroundColor: "#f5f5f5", // Light gray background
+    paddingHorizontal: 16,
+    paddingTop: 10,
   },
   item: {
-    backgroundColor: '#ddd',
+    backgroundColor: "#e5e5e5",
     padding: 20,
     marginVertical: 8,
-    marginHorizontal: 16,
-    borderRadius: 15
+    marginHorizontal: 16, // Extra margin to prevent shadow cutoff
+    borderRadius: 15,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 3 },
+    elevation: 4, // Shadow for Android
   },
   title: {
     fontSize: 32,
