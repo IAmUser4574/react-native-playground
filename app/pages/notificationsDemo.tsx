@@ -47,13 +47,13 @@ export default function NotificationsDemo() {
         body: 'This is a timed notification.',
       },
       trigger: {
-        seconds: 2,
+        seconds: 5,
         repeats: false,
         type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
       },
     });
 
-    Alert.alert("Notification Scheduled", "A notification will appear in 15 seconds.");
+    Alert.alert("Notification Scheduled", "A notification will appear in 5 seconds.");
   };
 
   return (
