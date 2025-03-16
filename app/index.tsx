@@ -31,6 +31,10 @@ const DATA = [
     title: 'carousel swipe',
   },
   {
+    page: 'autocompleteInput',
+    title: 'autocomplete input',
+  },
+  {
     page: 'snackbarDemo',
     title: 'TODO - snackbar',
   },
