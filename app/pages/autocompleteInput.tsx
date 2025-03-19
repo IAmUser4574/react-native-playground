@@ -29,7 +29,6 @@ export default function AutocompleteInput() {
     const isLoading = !allMovies.length;
     const placeholder = isLoading ? 'Loading data...' : 'Enter Star Wars film title';
 
-
     return (
         <SafeAreaView style={styles.saveView}>
           <View style={styles.container}>
@@ -41,6 +40,7 @@ export default function AutocompleteInput() {
                 value={query}
                 onChangeText={setQuery}
                 placeholder={placeholder}
+                containerStyle={styles.flatListStyle}
                 flatListProps={{
                   keyboardShouldPersistTaps: 'always',
                   keyExtractor: (movie) => movie.episodeId.toString(),
@@ -112,4 +112,7 @@ const styles = StyleSheet.create({
       zIndex: 1,
       padding: 5,
     },
+    flatListStyle:{
+
+    }
   });

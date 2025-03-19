@@ -35,6 +35,10 @@ const DATA = [
     title: 'autocomplete input',
   },
   {
+    page: 'gestureHandlerSwipeable',
+    title: 'flatlist gestures',
+  },
+  {
     page: 'snackbarDemo',
     title: 'TODO - snackbar',
   },
