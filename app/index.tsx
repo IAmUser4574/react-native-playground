@@ -1,8 +1,20 @@
 import { FlashList } from "@shopify/flash-list";
 import { useEffect} from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, AppRegistry } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { useRouter, useNavigation } from "expo-router"; // Using Expo Router navigation
+
+import { registerWidgetTaskHandler } from 'react-native-android-widget';
+import { registerRootComponent } from 'expo';
+
+// import config from '../app.config'
+import App from '../app';
+import HelloWidgetTaskHandler from './components/widgets/helloWidgetTaskHandler'
+
+// https://github.com/sAleksovski/react-native-android-widget/issues/65
+registerRootComponent(App);
+// AppRegistry.registerComponent(config.name, () => App);
+registerWidgetTaskHandler(HelloWidgetTaskHandler);
 
 
 const DATA = [
@@ -37,6 +49,10 @@ const DATA = [
   {
     page: 'gestureHandlerSwipeable',
     title: 'flatlist gestures',
+  },
+  {
+    page: 'androidWidget',
+    title: 'android widgets',
   },
   {
     page: 'snackbarDemo',
