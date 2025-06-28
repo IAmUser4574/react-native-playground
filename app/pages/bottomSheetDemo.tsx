@@ -26,25 +26,25 @@ export default function BottomSheetDemo() {
   // render
   return (
     <GestureHandlerRootView style={styles.container}>
-      <TouchableOpacity 
+      <TouchableOpacity
         onPress={() => handleSnapPress(2)}
         style={styles.button}>
         <Text style={styles.buttonText} >Snap To 90%</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity 
+      <TouchableOpacity
         onPress={() => handleSnapPress(1)}
         style={styles.button}>
         <Text style={styles.buttonText} >Snap To 50%</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity 
+      <TouchableOpacity
         onPress={() => handleSnapPress(0)}
         style={styles.button}>
         <Text style={styles.buttonText} >Snap To 25%</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity 
+      <TouchableOpacity
         onPress={() => handleClosePress()}
         style={styles.dismissButton}>
         <Text style={styles.buttonText} >Dismiss</Text>
@@ -64,7 +64,7 @@ export default function BottomSheetDemo() {
     </GestureHandlerRootView>
   );
 };
-  
+
 const styles = StyleSheet.create({
   container: {
       flex: 1,
